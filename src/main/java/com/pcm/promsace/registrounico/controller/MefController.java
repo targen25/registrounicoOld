@@ -37,10 +37,10 @@ public class MefController {
     {
         return ResponseEntity.ok(gastoService.findAllGasto());
     }
-    @GetMapping("gastoDiarioPorAnioMes/{anoEje}/{mesEje}")
-    public ResponseEntity<?> getGastoDiarioPorAnioMes(@PathVariable Integer anoEje,@PathVariable Integer mesEje)
+    @GetMapping("gastoDiarioPorAnioMes/{anoEje}/{mesEje}/{page}/{size}")
+    public ResponseEntity<?> getGastoDiarioPorAnioMes(@PathVariable Integer anoEje,@PathVariable Integer mesEje,@PathVariable Integer page,@PathVariable Integer size)
     {
-        return ResponseEntity.ok(gastoDiarioService.findByYearMonth(anoEje,mesEje));
+        return ResponseEntity.ok(gastoDiarioService.findByYearMonth(anoEje,mesEje,page,size));
     }
 
 }
